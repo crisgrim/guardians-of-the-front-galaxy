@@ -67,7 +67,7 @@ export default {
         hype: 10,
         categories: ['Rol', 'One Player'],
         image: 'https://www.clavecd.es/wp-content/uploads/buy-the-elder-scrolls-5-skyrim-cd-key-pc-download-img1.jpg',
-      },
+      }
     ],
   }),
   components: {
