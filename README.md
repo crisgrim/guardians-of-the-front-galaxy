@@ -1,4 +1,4 @@
-# Guardians of the front galaxy
+# Guardians of the front galaxy (T3chfest)
 
 ## Project setup
 ```
