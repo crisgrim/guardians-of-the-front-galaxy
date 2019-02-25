@@ -1,11 +1,12 @@
 <template>
-    <ul>
-        <Game
-          @game-clicked="handleGameClick"
-          :game="game"
-          v-for="game in games"
-          :key="game.id"/>
-    </ul>
+  <ul>
+    <Game
+      v-for="game in games"
+      :key="game.id"
+      :game="game"
+      @game-clicked="handleGameClick"
+    />
+  </ul>
 </template>
 
 <script>
@@ -13,6 +14,9 @@ import Game from '@/components/Game.vue';
 
 export default {
   name: 'GameList',
+  components: {
+    Game,
+  },
   props: {
     games: {
       type: Array,
@@ -28,9 +32,6 @@ export default {
       console.log(game);
     },
     */
-  },
-  components: {
-    Game,
   },
 };
 </script>

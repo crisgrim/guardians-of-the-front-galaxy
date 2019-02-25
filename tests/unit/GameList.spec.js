@@ -1,6 +1,6 @@
-import { mount } from '@vue/test-utils'
-import GamesList from '../../src/components/GamesList'
-import Game from '../../src/components/Game'
+import { mount } from '@vue/test-utils';
+import GamesList from '../../src/components/GamesList';
+import Game from '../../src/components/Game';
 
 describe('GamesList.spec.js', () => {
   const games = [{
@@ -18,55 +18,55 @@ describe('GamesList.spec.js', () => {
     image: 'https://static.promodescuentos.com/pepperpdimages/threads/thread_large/default/251090_1.jpg',
   }];
 
-  let cmp
+  let cmp;
 
   beforeEach(() => {
     cmp = mount(GamesList, {
       propsData: {
-        games
-      }
-    })
-  })
+        games,
+      },
+    });
+  });
 
   it('has received games as property', () => {
-    expect(cmp.props().games).toEqual(games)
-  })
+    expect(cmp.props().games).toEqual(games);
+  });
 
   it('has the expected html structure', () => {
-    expect(cmp.element).toMatchSnapshot()
-  })
+    expect(cmp.element).toMatchSnapshot();
+  });
 
   it('is a GamesList component', () => {
-    expect(cmp.is(GamesList)).toBe(true)
-  })
+    expect(cmp.is(GamesList)).toBe(true);
+  });
 
   it('contains a game component', () => {
-    expect(cmp.contains(Game)).toBe(true)
-  })
+    expect(cmp.contains(Game)).toBe(true);
+  });
 
   // Vue instance
   it('Both GamesList and game are vue instances', () => {
-    expect(cmp.isVueInstance()).toBe(true)
-    expect(cmp.find(Game).isVueInstance()).toBe(true)
-  })
+    expect(cmp.isVueInstance()).toBe(true);
+    expect(cmp.find(Game).isVueInstance()).toBe(true);
+  });
 
   // Structure
   it('game element exists', () => {
-    expect(cmp.find('.game').exists()).toBe(true)
-  })
+    expect(cmp.find('.game').exists()).toBe(true);
+  });
 
   it('game is not empty', () => {
-    expect(cmp.find(Game).isEmpty()).toBe(false)
-  })
+    expect(cmp.find(Game).isEmpty()).toBe(false);
+  });
 
   it('game has a class attribute set to "game"', () => {
-    expect(cmp.find(Game).attributes().class).toBe('game')
-  })
+    expect(cmp.find(Game).attributes().class).toBe('game');
+  });
 
   it('Calls handleGameClick when @game-click happens', () => {
-    const stub = jest.fn()
-    cmp.setMethods({ handleGameClick: stub })
-    const el = cmp.find('.game').vm.$emit('game-clicked', {
+    const stub = jest.fn();
+    cmp.setMethods({ handleGameClick: stub });
+    cmp.find('.game').vm.$emit('game-clicked', {
       id: 0,
       title: 'God of war',
       year: 2018,
@@ -79,7 +79,7 @@ describe('GamesList.spec.js', () => {
       hype: 10,
       categories: ['Adventure', 'Vikings', 'One Player'],
       image: 'https://static.promodescuentos.com/pepperpdimages/threads/thread_large/default/251090_1.jpg',
-    })
+    });
 
     expect(stub).toBeCalledWith({
       id: 0,
@@ -94,6 +94,6 @@ describe('GamesList.spec.js', () => {
       hype: 10,
       categories: ['Adventure', 'Vikings', 'One Player'],
       image: 'https://static.promodescuentos.com/pepperpdimages/threads/thread_large/default/251090_1.jpg',
-    })
-  })
-})
+    });
+  });
+});

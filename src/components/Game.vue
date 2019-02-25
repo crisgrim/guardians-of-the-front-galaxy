@@ -1,30 +1,36 @@
 <template>
-    <li
-      class="game"
-      @click="handleClick">
-        <img :src=game.image />
+  <li
+    class="game"
+    @click="handleClick"
+  >
+    <img :src="game.image">
 
-      <div class="content">
-        <h2>{{game.title}}, {{game.year}}</h2>
-        <h3>Published: {{formatPublishDate}}</h3>
+    <div class="content">
+      <h2>{{ game.title }}, {{ game.year }}</h2>
+      <h3>Published: {{ formatPublishDate }}</h3>
 
-        <p>
-          Started:
-          <i :class="[game.started ? 'fas fa-check' : 'fas fa-times']"></i>
-          Ended:
-          <i :class="[game.ended ? 'fas fa-check' : 'fas fa-times']"></i>
+      <p>
+        Started:
+        <i :class="[game.started ? 'fas fa-check' : 'fas fa-times']" />
+        Ended:
+        <i :class="[game.ended ? 'fas fa-check' : 'fas fa-times']" />
+      </p>
+
+      <p>Percentage {{ game.percentage }}</p>
+
+      <p>Estimated {{ game.estimated }}</p>
+      <p>Score {{ game.score }} - Hype {{ game.hype }}</p>
+
+      <div class="categories">
+        <p
+          v-for="categorie in game.categories"
+          :key="categorie"
+        >
+          {{ categorie }}
         </p>
-
-        <p>Percentage {{game.percentage}}</p>
-
-        <p>Estimated {{game.estimated}}</p>
-        <p>Score {{game.score}} - Hype {{game.hype}}</p>
-
-        <div class="categories">
-          <p v-for="categorie in game.categories" :key="categorie">{{categorie}}</p>
-        </div>
       </div>
-    </li>
+    </div>
+  </li>
 </template>
 
 <script>

@@ -1,12 +1,26 @@
 <template>
   <div>
-    <form action="" @submit.prevent="onSubmit(inputValue)">
-      <input type="text" v-model="inputValue">
-      <button type="submit"> Send </button>
+    <form
+      action=""
+      @submit.prevent="onSubmit(inputValue)"
+    >
+      <input
+        v-model="inputValue"
+        type="text"
+      >
+      <button type="submit">
+        Send
+      </button>
       <span class="reversed">{{ reversedInput }}</span>
     </form>
 
-    <p v-for="res in results" :key="res.id" class="result"> {{ res.title }} </p>
+    <p
+      v-for="res in results"
+      :key="res.id"
+      class="result"
+    >
+      {{ res.title }}
+    </p>
   </div>
 </template>
 
@@ -14,14 +28,26 @@
 import axios from 'axios';
 
 export default {
+  props: {
+    reversed: {
+      required: true,
+      type: Boolean,
+    }
+  },
   data: () => ({
     inputValue: '',
     results: [],
   }),
-  props: ['reversed'],
   computed: {
     reversedInput() {
       return this.inputValue.split('').reverse().join('');
+    },
+  },
+  watch: {
+    inputValue(newVal, oldVal) {
+      if (newVal.trim().length && newVal !== oldVal) {
+        // console.log(newVal);
+      }
     },
   },
   methods: {
@@ -33,13 +59,6 @@ export default {
       });
 
       return getPromise;
-    },
-  },
-  watch: {
-    inputValue(newVal, oldVal) {
-      if (newVal.trim().length && newVal !== oldVal) {
-        // console.log(newVal);
-      }
     },
   },
 };

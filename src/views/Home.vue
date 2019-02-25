@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>My <strong>Videogames</strong> List</h1>
-    <GamesList :games="games"/>
+    <GamesList :games="games" />
   </div>
 </template>
 
@@ -9,7 +9,10 @@
 import GamesList from '@/components/GamesList.vue';
 
 export default {
-  name: 'home',
+  name: 'Home',
+  components: {
+    GamesList,
+  },
   data: () => ({
     games: [
       {
@@ -70,8 +73,5 @@ export default {
       },
     ],
   }),
-  components: {
-    GamesList,
-  },
 };
 </script>
