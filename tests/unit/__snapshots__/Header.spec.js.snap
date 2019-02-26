@@ -5,11 +5,15 @@ exports[`Header.spec.js has the expected html structure 1`] = `
   class="nav"
 >
   <a>
+    
     Home
+  
   </a>
    
   <a>
+    
     About
+  
   </a>
 </div>
 `;

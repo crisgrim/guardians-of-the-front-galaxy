@@ -51,13 +51,19 @@ exports[`GamesList.spec.js has the expected html structure 1`] = `
         class="categories"
       >
         <p>
-          Adventure
+          
+        Adventure
+      
         </p>
         <p>
-          Vikings
+          
+        Vikings
+      
         </p>
         <p>
-          One Player
+          
+        One Player
+      
         </p>
       </div>
     </div>
