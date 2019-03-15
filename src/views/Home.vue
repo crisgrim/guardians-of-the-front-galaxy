@@ -59,7 +59,7 @@ export default {
       },
       {
         id: 3,
-        title: 'Skyrim',
+        title: 'Fallout 76',
         year: 2011,
         publish: new Date(2018, 11, 1),
         started: true,
@@ -73,5 +73,5 @@ export default {
       },
     ],
   }),
-}
+};
 </script>
