@@ -1,5 +1,7 @@
 # Guardians of the front galaxy (T3chfest)
 
+Slides: https://bit.ly/2HHCo0q
+
 ## Project setup
 ```
 npm install
